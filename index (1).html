@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashley | Finance analyst portfolio</title>
+<meta name="description" content="Equity research and data analysis by Ashley, Finance student at UW-Green Bay. Graduating May 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230E1A2B'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='bold' fill='%23C89B52' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1A2B;
+  --navy-2:#132234;
+  --brass:#C89B52;
+  --brass-dim:#8A6C39;
+  --rust:#C96A4C;
+  --sage:#8FB59B;
+  --text:#E7ECF2;
+  --muted:#93A3B6;
+  --rule:rgba(200,155,82,.22);
+  --measure:66rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--navy);color:var(--text);
+  font-family:"Source Serif 4",Georgia,serif;font-size:1.0625rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(900px 480px at 78% -8%, rgba(200,155,82,.13), transparent 62%),
+    radial-gradient(700px 420px at 4% 22%, rgba(143,181,155,.07), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.75rem}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:2px}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6875rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brass);
+}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(14,26,43,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.bar{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between;padding:1.125rem 0}
+.name{font-family:Archivo,sans-serif;font-weight:700;font-size:1.0625rem;letter-spacing:-.01em}
+.name em{font-style:normal;color:var(--muted);font-weight:500;margin-left:.5rem;padding-left:.75rem;border-left:1px solid var(--rule)}
+nav{display:flex;gap:1.5rem;font-family:"IBM Plex Mono",monospace;font-size:.75rem}
+nav a{text-decoration:none;color:var(--muted);padding-bottom:3px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--brass);border-bottom-color:var(--brass)}
+
+/* hero */
+.hero{padding:6rem 0 4.5rem}
+.hero h1{
+  font-family:Archivo,sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.04;
+  font-size:clamp(2.25rem,6vw,4.25rem);max-width:20ch;margin:1.5rem 0 0;
+}
+.hero h1 b{font-weight:700;color:var(--brass)}
+.sub{margin-top:1.75rem;max-width:56ch;font-size:1.1875rem;color:#C6D1DD}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border:1px solid var(--rule);border-radius:3px;padding:1.75rem 1.625rem 1.5rem;
+  position:relative;overflow:hidden;
+}
+.card::after{content:"";position:absolute;left:0;top:0;width:3px;height:100%}
+.card.a::after{background:var(--rust)}
+.card.b::after{background:var(--sage)}
+.fig{
+  font-family:"IBM Plex Mono",monospace;font-weight:500;font-variant-numeric:tabular-nums;
+  font-size:clamp(2.1rem,5.5vw,3.1rem);line-height:1;letter-spacing:-.03em;margin-top:1rem;
+}
+.card.a .fig{color:var(--rust)}
+.card.b .fig{color:var(--sage)}
+.card p{font-size:.9375rem;color:var(--muted);margin-top:.875rem;line-height:1.6}
+.readout{margin-top:1.75rem;font-size:1rem;color:var(--muted);max-width:60ch}
+.readout b{color:var(--text);font-weight:600}
+
+/* sections */
+section{padding:5rem 0;border-top:1px solid var(--rule)}
+.sechead{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:3rem}
+h2{font-family:Archivo,sans-serif;font-weight:600;font-size:1.625rem;letter-spacing:-.025em}
+h3{font-family:Archivo,sans-serif;font-weight:600;font-size:1.5rem;letter-spacing:-.025em;line-height:1.2}
+
+/* projects */
+.proj{display:grid;grid-template-columns:9rem 1fr;gap:2.75rem;align-items:start}
+.proj+.proj{margin-top:4rem;padding-top:4rem;border-top:1px solid var(--rule)}
+.status{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;
+  display:inline-block;padding:.3125rem .5625rem;border:1px solid currentColor;border-radius:2px;
+}
+.status.live{color:var(--sage)}
+.status.wip{color:var(--brass)}
+.meta{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--muted);line-height:2;margin-top:1rem}
+.q{font-size:1.125rem;margin-top:1rem;max-width:58ch;color:#C6D1DD}
+.body p{max-width:62ch;margin-top:1.125rem}
+.body strong{color:var(--brass);font-weight:600}
+.finding{
+  border-left:3px solid var(--sage);background:rgba(143,181,155,.07);
+  padding:1.125rem 1.25rem;margin-top:1.75rem;max-width:60ch;border-radius:0 3px 3px 0;
+}
+.finding.pending{border-left-color:var(--brass-dim);background:rgba(200,155,82,.06);color:var(--muted);font-style:italic}
+.stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem}
+.stack span{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;border:1px solid var(--rule);
+  padding:.375rem .625rem;color:var(--muted);border-radius:2px;
+}
+.links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.875rem}
+.links a{
+  font-family:"IBM Plex Mono",monospace;font-size:.8125rem;text-decoration:none;
+  padding:.625rem 1rem;border:1px solid var(--brass);color:var(--brass);border-radius:2px;
+  transition:background .2s,color .2s;
+}
+.links a:hover{background:var(--brass);color:var(--navy)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 19rem;gap:4.5rem;align-items:start}
+.about p{max-width:60ch}
+.about p+p{margin-top:1.125rem}
+.rail{border-left:1px solid var(--rule);padding-left:1.75rem}
+.rail dt{font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:1.75rem}
+.rail dt:first-child{margin-top:0}
+.rail dd{font-size:.9375rem;margin-top:.4375rem;color:var(--muted);line-height:1.6}
+
+/* contact */
+footer{padding:5rem 0 6rem;border-top:1px solid var(--rule)}
+.contact{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.contact a{
+  font-family:"IBM Plex Mono",monospace;font-size:.875rem;text-decoration:none;
+  padding:.75rem 1.125rem;border:1px solid var(--brass);color:var(--brass);border-radius:2px;
+  transition:background .2s,color .2s;
+}
+.contact a:hover{background:var(--brass);color:var(--navy)}
+.colophon{margin-top:3.5rem;font-family:"IBM Plex Mono",monospace;font-size:.6875rem;color:var(--brass-dim)}
+
+@media (max-width:820px){
+  .about{grid-template-columns:1fr;gap:2.5rem}
+  .rail{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:2rem}
+}
+@media (max-width:700px){
+  .split{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr;gap:1.25rem}
+  .hero{padding:3.5rem 0 3rem}
+  section{padding:3.5rem 0}
+  nav{gap:1.125rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="name">Ashley <em>Finance, UW-Green Bay</em></div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="eyebrow rise d1">Equity research · SoFi Technologies · August 2026</p>
+    <h1 class="rise d2">The market and the model disagree by <b>half</b>.</h1>
+    <p class="sub rise d2">At 2.5&times; tangible book, SoFi's share price only makes sense if the company earns roughly 29% on tangible common equity, forever. My forecast, built from SoFi's own disclosures, reaches 13.3% by 2028.</p>
+
+    <div class="split">
+      <div class="card a rise d3">
+        <span class="eyebrow">Implied by today's price</span>
+        <div class="fig">29%</div>
+        <p>Terminal ROTCE required to justify $18.38, at a 14.0% cost of equity and 4% long-run growth. Management's own long-term target tops out at 30%.</p>
+      </div>
+      <div class="card b rise d4">
+        <span class="eyebrow">Reached in my forecast</span>
+        <div class="fig">13.3%</div>
+        <p>Projected ROTCE by 2028, driven off disclosed member growth, deposit costs, and the shift toward fee-based revenue.</p>
+      </div>
+    </div>
+    <p class="readout rise d4"><b>The gap is the thesis.</b> Everything below is the work that gets there, plus the honest reasons it might be wrong.</p>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Selected work</h2>
+      <span class="eyebrow">2 projects</span>
+    </div>
+
+    <article class="proj">
+      <div>
+        <span class="status live">Complete</span>
+        <div class="meta">
+          Equity valuation<br>
+          NASDAQ: SOFI<br>
+          Aug 2026
+        </div>
+      </div>
+      <div class="body">
+        <h3>What does the market have to believe about SoFi?</h3>
+        <p class="q">A residual income valuation of SoFi Technologies, cross-checked against two peer sets, plus a reverse-engineering of the assumptions already embedded in the share price.</p>
+
+        <p><strong>Why residual income rather than DCF.</strong> Free cash flow is the wrong lens for a bank. Deposits are not financing; they are raw material, the input the business converts into loans. The usual separation of operating and financing cash flow therefore collapses. Capital is also regulated rather than discretionary: growth in lending forces growth in equity. Residual income sidesteps both by starting from reported tangible book value and valuing only the returns earned above the 14.0% cost of equity.</p>
+
+        <p><strong>Method.</strong> Three-year projections built from the 2025 annual report and the first half of 2026. Cost of equity from CAPM (4.69% risk-free rate, 2.20 beta, 4.23% equity risk premium). Valuation by residual income and justified P/TBV, benchmarked against both a traditional bank comp set and a fintech comp set, with a sensitivity grid flexing terminal ROTCE against cost of equity.</p>
+
+        <div class="finding">Three of four methods cluster at $10 to $13 because they treat SoFi as a bank. The fintech comp set says $20.94 because it treats SoFi as a growth platform. The market cannot decide which company this is, and that indecision is worth roughly 2&times; on the share price.</div>
+
+        <p><strong>What I'd flag before anyone else does.</strong> The fintech peer set is bimodal: a small number of expensive names pull the median upward, so $20.94 is closer to an artifact than a signal. The 2.20 beta reflects how SoFi trades rather than what its balance sheet holds; the sensitivity grid shows what happens at lower figures. Terminal ROTCE is the assumption everything downstream hangs on.</p>
+
+        <div class="stack"><span>Excel</span><span>Residual income</span><span>CAPM</span><span>Comparable companies</span><span>Sensitivity analysis</span></div>
+        <div class="links">
+          <a href="sofi-memo-Ashley.pdf">Read the memo</a>
+          <a href="sofi-model-Ashley_Mone.xlsx">Download the model</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div>
+        <span class="status wip">In progress</span>
+        <div class="meta">
+          Data analysis<br>
+          CFPB database<br>
+          Shipping Sept 2026
+        </div>
+      </div>
+      <div class="body">
+        <h3>Do fintechs generate different complaints than banks?</h3>
+        <p class="q">Comparing Chime, Block, PayPal, and Coinbase against Wells Fargo across 30 months of federal complaint data. Not just how many complaints each attracts, but what they are about and how they end.</p>
+
+        <p><strong>Approach.</strong> Roughly 30 months of CFPB Consumer Complaint Database records, cleaned in Python and analysed in SQL, published as a Power BI dashboard. The interesting comparison is not volume, since Wells Fargo dominates on raw count simply because it is larger. What matters is composition and outcome: which issues dominate for each firm, and how often a complaint ends in monetary relief rather than an explanation.</p>
+
+        <div class="finding pending">Findings pending. The cleaning pipeline and analysis queries are written and published; the dashboard is in build.</div>
+
+        <p><strong>Known limitation, stated up front.</strong> The CFPB publishes no customer-count denominator, and customer figures across these five firms are not defined consistently enough to construct one. Every comparison is therefore expressed as a share within company rather than a rate per customer.</p>
+
+        <div class="stack"><span>SQL</span><span>Python / pandas</span><span>Power BI</span><span>Window functions</span></div>
+        <div class="links">
+          <a href="https://github.com/ashleymone/ashleymone.github.io/tree/main/cfpb" target="_blank" rel="noopener">View the SQL and cleaning script</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sechead"><h2>About</h2></div>
+    <div class="about">
+      <div>
+        <p>I'm a Finance student at the University of Wisconsin-Green Bay, graduating May 2027, with a certificate in Electrical Engineering. I came to finance from engineering, which is why I tend to treat a valuation the way I'd treat a system: identify the inputs, find the parameter the output is most sensitive to, and be explicit about where the estimate breaks.</p>
+        <p>As an analyst with the Student Managed Investment Fund I've presented two valuation models to the investment committee. Separately, I work as a research assistant studying S&amp;P 500 index construction and what its concentration means for portfolio allocation.</p>
+        <p>I'm looking for equity research, investment analysis, and market research roles starting summer 2027.</p>
+      </div>
+      <dl class="rail">
+        <dt>Studying</dt>
+        <dd>B.S. Finance, UW-Green Bay<br>Certificate, Electrical Engineering<br>Expected May 2027</dd>
+        <dt>Currently</dt>
+        <dd>Analyst, Student Managed Investment Fund<br>Research Assistant, S&amp;P 500 index construction<br>Business Management Intern, Chartwells at UW-Green Bay</dd>
+        <dt>Tools</dt>
+        <dd>Excel · SQL · Power BI · Python · Tableau</dd>
+        <dt>Languages</dt>
+        <dd>English · French</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p style="max-width:52ch;margin-top:.875rem;color:var(--muted)">Happy to walk through either project in detail, including the parts I'd do differently.</p>
+    <div class="contact">
+      <a href="mailto:monetl03@uwgb.edu">Email</a>
+      <a href="https://www.linkedin.com/in/ashleymone/">LinkedIn</a>
+      <a href="https://github.com/ashleymone" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="colophon">Last updated September 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
